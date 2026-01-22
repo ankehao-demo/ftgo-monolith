@@ -2,10 +2,8 @@
 buildscript {
     repositories {
         mavenCentral()
+        gradlePluginPortal()
         jcenter()
-        maven {
-            url 'https://repo.spring.io/libs-milestone'
-        }
     }
     dependencies {
         classpath "com.avast.gradle:gradle-docker-compose-plugin:$dockerComposePluginVersion"

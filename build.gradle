@@ -25,13 +25,10 @@ subprojects {
 
     repositories {
         mavenCentral()
+        gradlePluginPortal()
         jcenter()
 
         eventuateMavenRepoUrl.split(',').each { repoUrl -> maven { url repoUrl } }
-
-        maven {
-            url 'https://repo.spring.io/libs-milestone'
-        }
 
         maven {
             url "${project.rootDir}/build/repo"
