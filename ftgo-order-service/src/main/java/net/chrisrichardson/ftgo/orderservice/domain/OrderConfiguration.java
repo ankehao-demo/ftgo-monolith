@@ -19,14 +19,21 @@ import java.util.Optional;
 public class OrderConfiguration {
   // TODO move to framework
   @Bean
+  public PaymentService paymentService() {
+    return new PaymentService();
+  }
+
+  @Bean
   public OrderService orderService(RestaurantRepository restaurantRepository,
                                    OrderRepository orderRepository,
                                    Optional<MeterRegistry> meterRegistry,
-                                   ConsumerService consumerService, CourierRepository courierRepository) {
+                                   ConsumerService consumerService,
+                                   CourierRepository courierRepository,
+                                   PaymentService paymentService) {
     return new OrderService(orderRepository,
             restaurantRepository,
             meterRegistry,
-            consumerService, courierRepository);
+            consumerService, courierRepository, paymentService);
   }
 
   @Bean

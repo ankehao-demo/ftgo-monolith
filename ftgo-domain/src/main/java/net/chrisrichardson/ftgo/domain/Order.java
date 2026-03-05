@@ -178,6 +178,14 @@ public class Order {
     }
   }
 
+  public PaymentInformation getPaymentInformation() {
+    return paymentInformation;
+  }
+
+  public void setPaymentInformation(PaymentInformation paymentInformation) {
+    this.paymentInformation = paymentInformation;
+  }
+
   public void schedule(Courier assignedCourier) {
     this.assignedCourier = assignedCourier;
   }
