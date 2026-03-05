@@ -29,18 +29,21 @@ public class OrderService {
 
   private ConsumerService consumerService;
   private CourierRepository courierRepository;
+  private PaymentService paymentService;
   private Random random = new Random();
 
   public OrderService(OrderRepository orderRepository,
                       RestaurantRepository restaurantRepository,
                       Optional<MeterRegistry> meterRegistry,
-                      ConsumerService consumerService, CourierRepository courierRepository) {
+                      ConsumerService consumerService, CourierRepository courierRepository,
+                      PaymentService paymentService) {
 
     this.orderRepository = orderRepository;
     this.restaurantRepository = restaurantRepository;
     this.meterRegistry = meterRegistry;
     this.consumerService = consumerService;
     this.courierRepository = courierRepository;
+    this.paymentService = paymentService;
   }
 
   @Transactional
@@ -56,7 +59,8 @@ public class OrderService {
 
     consumerService.validateOrderForConsumer(consumerId, order.getOrderTotal());
 
-    // TODO - charge a credit card too
+    PaymentInformation paymentInfo = paymentService.chargeCreditCard(consumerId, order.getOrderTotal());
+    order.setPaymentInformation(paymentInfo);
 
     orderRepository.save(order);
 
