@@ -2,10 +2,6 @@
 buildscript {
     repositories {
         mavenCentral()
-        jcenter()
-        maven {
-            url 'https://repo.spring.io/libs-milestone'
-        }
     }
     dependencies {
         classpath "com.avast.gradle:gradle-docker-compose-plugin:$dockerComposePluginVersion"
@@ -22,9 +18,8 @@ dockerCompose {
     startedServices = [ 'not-used']
 
     integrationTests {
-        if (System.getenv("FTGO_DOCKER_COMPOSE_FILES") != null)
-            useComposeFiles = System.getenv("FTGO_DOCKER_COMPOSE_FILES").split(",").collect { "../" + it }
-
+        useComposeFiles = [ '../docker-compose.yml']
+        projectName = 'ftgo-monolith'
         startedServices = [ 'mysql']
         stopContainers = false
     }
