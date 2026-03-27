@@ -10,6 +10,6 @@ dependencies {
     compile 'javax.el:javax.el-api:2.2.5'
 
     testCompile "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
-    testCompile "com.jayway.restassured:rest-assured:$restAssuredVersion"
-    testCompile "com.jayway.jsonpath:json-path:2.3.0"
+    testCompile "io.rest-assured:rest-assured:$restAssuredVersion"
+    testCompile "com.jayway.jsonpath:json-path:2.9.0"
 }

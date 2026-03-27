@@ -7,6 +7,6 @@ dependencies {
 
 
     compile "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
-    compile "com.jayway.restassured:rest-assured:$restAssuredVersion"
-    compile "com.jayway.jsonpath:json-path:2.3.0"
+    compile "io.rest-assured:rest-assured:$restAssuredVersion"
+    compile "com.jayway.jsonpath:json-path:2.9.0"
 }
