@@ -9,7 +9,7 @@ dependencies {
     compile group: 'commons-lang', name: 'commons-lang', version: '2.6'
     compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.7"
 
-    compile 'mysql:mysql-connector-java:5.1.39'
+    compile 'mysql:mysql-connector-java:5.1.49'
 
     testCompile "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
 
