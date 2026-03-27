@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
         jcenter()
         maven {
-            url 'https://repo.spring.io/libs-milestone'
+            url 'https://plugins.gradle.org/m2/'
         }
     }
     dependencies {

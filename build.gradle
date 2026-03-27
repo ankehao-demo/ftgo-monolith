@@ -30,7 +30,7 @@ subprojects {
         eventuateMavenRepoUrl.split(',').each { repoUrl -> maven { url repoUrl } }
 
         maven {
-            url 'https://repo.spring.io/libs-milestone'
+            url 'https://plugins.gradle.org/m2/'
         }
 
         maven {
